@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/style.css">
+
+    <title>Random Movie Recommender</title>
+    
+    <script defer src="public/helper.js"></script>
+    <script defer src="public/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="appTitle">Film Random Recommender</h1>
+    </header>
+    <form id="genreForm">
+        <label>Choose a genre:</label>
+        <select name="genres" id="genres">
+        </select>
+    </form>
+    <button id="playBtn">Let's play!</button>
+    <div id="movieInfo">
+        <div id="movieText"></div>
+        <div id="releaseDate"></div>
+        <div id="moviePoster"></div>
+        <div id="movieOverview"></div>
+        <div id="movieCast"></div>
+    </div>
+    <div id="likeOrDislikeBtns" hidden>
+        <button id="likeBtn"><i class=""></i></button>
+        <button id="dislikeBtn"><i class=""></i></button>
+    </div>
+</body>
+</html>
