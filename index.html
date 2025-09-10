@@ -4,32 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <title>Random Movie Recommender</title>
     
     <script defer src="public/helper.js"></script>
     <script defer src="public/main.js"></script>
 </head>
-<body>
+<body class="d-flex flex-column justify-content-center align-items-center">
     <header>
-        <h1 id="appTitle">Film Random Recommender</h1>
+        <h1 id="appTitle" class="my-3 text-white">Film Random Recommender <i class="bi bi-camera-reels"></i></h1>
     </header>
     <form id="genreForm">
-        <label>Choose a genre:</label>
+        <label class="my-4 text-white">Choose a genre:</label>
         <select name="genres" id="genres">
         </select>
     </form>
-    <button id="playBtn">Let's play!</button>
+    <button id="playBtn" class="btn btn-outline-primary py-3 text-white">Let's play!</button>
     <div id="movieInfo">
         <div id="movieText"></div>
         <div id="releaseDate"></div>
-        <div id="moviePoster"></div>
-        <div id="movieOverview"></div>
-        <div id="movieCast"></div>
+    <div class="container my-5">
+        <div class="row g-2">
+                <div id="moviePoster" class='col-md-4'></div>  
+            <div class="col-md-8 d-flex flex-column">
+                <div id="movieOverview" class="flex-fill mb-3 p-3 rounded text-white"></div>
+                <div id="movieCast" class="p-3 rounded flex-grow-1 overflow-auto text-white"></div>
+            </div>
+        </div>      
+    </div>
     </div>
     <div id="likeOrDislikeBtns" hidden>
-        <button id="likeBtn"><i class=""></i></button>
-        <button id="dislikeBtn"><i class=""></i></button>
+        <button id="likeBtn" class="btn btn-success"><i class="bi bi-hand-thumbs-up"></i></button>
+        <button id="dislikeBtn" class="btn btn-danger"><i class="bi bi-hand-thumbs-down"></i></button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

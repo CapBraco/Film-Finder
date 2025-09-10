@@ -33,11 +33,14 @@ const clearCurrentMovie = () => {
     const movieTextDiv = document.getElementById('movieText');
     const movieOverviewDiv = document.getElementById('movieOverview');
     const movieRelaseDiv = document.getElementById('releaseDate');
+    const movieCastDiv = document.getElementById('movieCast');
+
 
     movieOverviewDiv.innerHTML = '';
     movieRelaseDiv.innerHTML = '';
     moviePosterDiv.innerHTML = '';
     movieTextDiv.innerHTML = '';
+    movieCastDiv.innerHTML = '';
 }
 
 //Create html elements
@@ -46,26 +49,29 @@ const createPoster = (posterPath) =>{
     const posterImg = document.createElement('img');
     posterImg.setAttribute('src', posterUrl);
     posterImg.setAttribute('id', 'moviePoster');
+    posterImg.setAttribute('class', 'col-md-4 w-100 h-100 img-fluid rounded')
     return posterImg;
 }
 const createTitle = (title) =>{
     const titleHeader = document.createElement('h1');
     titleHeader.innerHTML = title;
     titleHeader.setAttribute('id', 'movieTitle');
+    titleHeader.setAttribute('class', 'fw-bold display-1 text-center text-white')
 
     return titleHeader;
 }
 const createOverview = (overview) => {
     const movieOverview = document.createElement('p');
     movieOverview.innerHTML = overview;
+    
     movieOverview.setAttribute('id', 'movieOverview');
-
     return movieOverview;
 }
 const createReleaseDate = (release_date) => {
     const releaseDate = document.createElement('h5');
     releaseDate.innerHTML = release_date;
     releaseDate.setAttribute('id', 'movieReleaseDate');
+    releaseDate.setAttribute('class', 'text-white p-3');
     
     return releaseDate;
 }
@@ -76,7 +82,8 @@ const createMovieCast = (cast) => {
     auxiliar.setAttribute('id', 'castText')
     const movieCast = document.createElement('ul');
     movieCast.setAttribute('id', 'castList')
-    
+    movieCast.setAttribute('class', 'list-unstyled mb-0 text-start');
+
     const top10Cast = cast.slice(0, 10);
 
     for (const actor of top10Cast){
@@ -97,14 +104,16 @@ const displayMovie = (movieInfo) => {
 
     //Create element
     
-    const moviePoster = createPoster(movieInfo.poster_path);
+    
     const movieTitle = createTitle(movieInfo.title);
+    const moviePoster = createPoster(movieInfo.poster_path);
     const movieOverview = createOverview(movieInfo.overview);
     const movieRelase = createReleaseDate(movieInfo.release_date);
 
     //Append to div
-    moviePosterDiv.appendChild(moviePoster);
+    
     movieTextDiv.appendChild(movieTitle);
+    moviePosterDiv.appendChild(moviePoster);
     movieOverviewDiv.appendChild(movieOverview);
     movieRelaseDiv.appendChild(movieRelase);
 
